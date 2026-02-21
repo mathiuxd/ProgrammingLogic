@@ -1,1 +1,5 @@
-<Solution />
+<Solution>
+  <Folder Name="/01/">
+    <Project Path="numberOddorNot/numberOddorNot.csproj" />
+  </Folder>
+</Solution>
