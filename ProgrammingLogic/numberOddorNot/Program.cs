@@ -1,9 +1,24 @@
-﻿
-Console.Write("Enter a number: ");
-string numberString = Console.ReadLine()!;
+﻿string numberString = string.Empty;
 
-int number = int.Parse(numberString);
+do
+{
 
-string message = (number % 2 == 0) ? "This number is even" : "This number isn't even";
+    Console.Write("Enter an integer or press 'E' to exit: ");
+    numberString = Console.ReadLine()!;
 
-Console.WriteLine(message);
+    if (numberString!.ToLower() == "e" ) continue;
+    
+
+    if (int.TryParse(numberString, out int numberValidation))
+    {
+        string message = (numberValidation % 2 == 0) ? $"The number {numberValidation} is even" : $"The number {numberValidation} is not even";
+        Console.WriteLine(message);
+    }
+    else
+    {
+        Console.WriteLine($"The input: {numberString}, is not an integer");
+    }
+
+} while (numberString!.ToLower() != "e");
+
+Console.WriteLine("Closing the program...");
